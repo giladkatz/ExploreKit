@@ -19,17 +19,10 @@ public class Program {
         List<String> datasets = new ArrayList<>();
 
         HashMap<String, Integer> classAttributeIndices = new HashMap<>();
-        datasets.add("/global/home/users/giladk/Datasets/heart.arff");
-        datasets.add("/global/home/users/giladk/Datasets/cancer.arff");
-        datasets.add("/global/home/users/giladk/Datasets/contraceptive.arff");
-        datasets.add("/global/home/users/giladk/Datasets/credit.arff");
-        datasets.add("/global/home/users/giladk/Datasets/credit-g.arff");
-        datasets.add("/global/home/users/giladk/Datasets/diabetes.arff");
-        datasets.add("/global/home/users/giladk/Datasets/Diabetic_Retinopathy_Debrecen.arff");
-        datasets.add("/global/home/users/giladk/Datasets/horse-colic.arff");
-        datasets.add("/global/home/users/giladk/Datasets/Indian_Liver_Patient_Dataset.arff");
-        datasets.add("/global/home/users/giladk/Datasets/seismic-bumps.arff");
-        datasets.add("/global/home/users/giladk/Datasets/cardiography_new.arff");
+        datasets.add("datasets/ionosphere.arff");
+        datasets.add("datasets/winequality-white.arff");
+        datasets.add("datasets/winequality-white-small.arff");
+
 
 
         for (int i = 0; i < 1; i++) {
