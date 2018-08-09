@@ -115,16 +115,21 @@ public class MLAttributesManager {
             File[] filesArray = folder.listFiles();
 
             boolean addHeader = true;
+            boolean foundDatasets = false;
             for (int i = 0; i < filesArray.length; i++) {
             //for (int i = 0; i < 1; i++) {
                 //we're making sure that the analyzed item is both a file AND not generated from the dataset we're currently analyzing
                 if (filesArray[i].isFile() && !filesArray[i].getName().contains(dataset.getName()) && filesArray[i].getPath().contains(".arff")) {
                     addArffFileContentToTargetFile(backgroundFilePath, filesArray[i].getAbsolutePath(), addHeader);
                     addHeader = false;
+                    foundDatasets = true;
                 }
                 else {
                     System.out.println("skipping file: " + filesArray[i].getName());
                 }
+            }
+            if (!foundDatasets) {
+                throw new Exception("If no background model is trained, please provide additional Datasets at " + properties.getProperty("DatasetInstancesFilesLocation"));
             }
             //now we load the contents of the ARFF file into an Instances object and train the classifier
             BufferedReader reader = new BufferedReader(new FileReader(backgroundFilePath + ".arff"));
